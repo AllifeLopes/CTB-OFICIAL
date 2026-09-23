@@ -1,0 +1,28 @@
+CTB GAME - LOGIN + JOGO + RANKING DE PATENTES
+
+Fluxo:
+LOGIN -> JOGO -> 10 QUESTÕES -> RESULTADO
+
+PONTUAÇÃO:
+Cada resposta correta = 10 pontos.
+Máximo da partida = 100 pontos.
+
+PATENTES:
+0-19  = RECRUTA
+20-29 = SOLDADO
+30-39 = CABO
+40-49 = SARGENTO
+50-59 = SUBTENENTE
+60-69 = ASPIRANTE
+70-79 = TENENTE
+80-89 = CAPITÃO
+90-99 = COMANDANTE
+100   = LENDA
+
+O jogo mostra patente, pontos e recorde do jogador.
+O recorde é salvo no localStorage deste navegador.
+
+IMPORTANTE:
+O login atual também usa localStorage. É adequado para protótipo/teste,
+mas para contas e ranking online entre vários usuários é necessário
+usar banco de dados/autenticação no backend.
