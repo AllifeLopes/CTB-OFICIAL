@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script>
+    if (sessionStorage.getItem("ctb_logado") !== "true") {
+      window.location.replace("../index.html");
+    }
+  </script>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo do CTB - Certo ou Errado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="player-bar">
+    <span>👤 <strong id="playerName"></strong></span>
+    <button id="logoutBtn" type="button">SAIR</button>
+  </div>
+
+  
+  <aside class="rank-hud" aria-label="Ranking do jogador">
+    <div class="rank-label">PATENTE</div>
+    <div class="rank-name" id="rankName">🪖 RECRUTA</div>
+    <div class="rank-info">
+      <span><strong id="rankScore">0</strong> / 100 PTS</span>
+      <span>RECORDE: <strong id="bestScore">0</strong></span>
+    </div>
+    <div class="rank-track"><div class="rank-progress" id="rankProgress"></div></div>
+  </aside>
+
+  <main class="game-shell">
+    <section class="ctb-board" aria-label="Jogo do CTB">
+      <img class="board-image" src="modelo_ctb.png" alt="Painel Jogo do CTB">
+
+      <div class="question-area">
+        <div class="progress" id="progress">QUESTÃO 1 DE 10</div>
+        <div class="question" id="question"></div>
+      </div>
+
+      <div class="answer-area">
+        <div class="answer-title">ESCOLHA SUA RESPOSTA</div>
+
+        <div class="buttons" id="answerButtons">
+          <button class="answer-btn correct-choice" data-answer="true">
+            <span class="symbol">✓</span>
+            <span>CERTO</span>
+          </button>
+          <button class="answer-btn wrong-choice" data-answer="false">
+            <span class="symbol">✕</span>
+            <span>ERRADO</span>
+          </button>
+        </div>
+
+        <div class="feedback hidden" id="feedback">
+          <div class="feedback-status" id="feedbackStatus"></div>
+          <p id="explanation"></p>
+          <button id="nextBtn" class="next-btn">PRÓXIMA QUESTÃO ▶</button>
+        </div>
+
+        <div class="result hidden" id="result">
+          <div class="result-title">FIM DO JOGO</div>
+          <div class="score" id="score"></div>
+          <button id="restartBtn" class="next-btn">JOGAR NOVAMENTE</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
